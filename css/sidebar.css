@@ -54,7 +54,7 @@
     top: 0;
     width: 250px;
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 20px;
     list-style: none;
 }
 
@@ -71,7 +71,7 @@
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     background: rgba(255,255,255,0.2);
 }
 
@@ -91,7 +91,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    color: #333;
     background: none;
 }
 

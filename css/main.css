@@ -22,7 +22,7 @@ body {
 }
 
 
-.img-home-portfolio,
+.img-inicio-portfolio,
 .img-customer,
 .portfolio-item {
     margin-bottom: 30px;
@@ -55,7 +55,7 @@ body {
 
 /* Half Page Height Carousel Customization */
 .carousel {
-    height: 50%;
+    height: 300px;
 }
 
 .item,
@@ -135,3 +135,85 @@ footer {
         /* increases the carousel height so it looks good on phones */
     }
 }
+
+/* Accordion Bootstrap */
+/* Icon when the collapsible content is shown */
+.panel-title > a:before {
+    font-family: "Glyphicons Halflings";
+    content: "\e114";
+    margin-right: 10px;
+}
+
+/* Icon when the collapsible content is hidden */
+.panel-title > a.collapsed:before {
+    content: "\e080";
+}
+
+/* Login */
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+
+#login-dp .help-block{
+    font-size:12px    
+}
+
+#login-dp .center{
+    border-top:1px solid #ddd;
+    padding-top: 14px;
+}
+
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+
+#login-dp .social-buttons a{
+    width: 49%;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #333;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+/* /Login */
+

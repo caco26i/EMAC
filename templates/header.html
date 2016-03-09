@@ -1,5 +1,6 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding: 0 20px;">
+    <div class="container-fluid">
+    	
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -8,37 +9,74 @@
                 <span class="icon-bar"></span>
             </button>
             <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-            <a class="navbar-brand" href="#/">EMAC</a>
+            <a class="navbar-brand" href="#">EMAC</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                	<input type="text" class="form-control" placeholder="Buscar">
-                </div>
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/services">Services</a>
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="main-header-navbar">
+
+            <ul class="nav navbar-nav navbar-right" role="tablist">
+                <li><a href="#services">Services</a>
                 </li>
-                <li><a href="#/pricing">Pricing Table</a>
+                <li><a href="#pricing">Pricing Table</a>
                 </li>
-                <li><a href="#/about">About</a>
+                <li><a href="#about">About</a>
                 </li>
-                <li><a href="#/faq">FAQ</a>
+                <li><a href="#faq">FAQ</a>
                 </li>
-                <li><a href="#/contact">Contact</a>
+                <li><a href="#contact">Contact</a>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#/blog">List of Posts</a>
+                        <li><a href="#blog">List of Posts</a>
                         </li>
-                        <li><a href="#/blog/post">View One Post</a>
+                        <li><a href="#blog/post">View One Post</a>
                         </li>
                     </ul>
                 </li>
+                
+                <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" ng-click="$event.preventDefault()"><b>Iniciar Sesión</b> <span class="caret"></span></a>
+					<ul id="login-dp" class="dropdown-menu">
+						<li>
+							<div class="row">
+								<div class="col-md-12">
+									Conectarse con
+									<div class="social-buttons">
+										<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+										<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+									</div>
+								</div>
+								<div class="col-md-12 center">
+									<form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											<label class="sr-only" for="exampleInputEmail2">Correo Electrónico</label>
+											<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Correo Electrónico" required>
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+											<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Contraseña" required>
+											<div class="help-block text-right"><a href="">¿Olvidaste la clave?</a></div>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox"> Mantener la sesión iniciada
+											</label>
+										</div>
+									</form>
+								</div>
+								<div class="bottom text-center">
+									¿Nuevo acá? <a href="#"><b>Registrate</b></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
