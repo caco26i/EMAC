@@ -1,1 +1,7 @@
 Plantilla Angular: https://github.com/charneykaye/angularjs-tutorial-1 
+
+Marco Navarro versiones Tecnología Proyecto:
+Servidor Jboss 5.1.0 ga
+Gestor BD Postgresql 8.4.x (Hay 3 versiones 8.4.1|2|3, cualquiera funciona igual)
+JDK 7
+Play Java Framework 2.3.10
