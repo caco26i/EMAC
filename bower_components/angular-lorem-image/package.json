@@ -1,0 +1,12 @@
+{
+  "name": "angular-lorem-image",
+  "description": "Generate img from lorem img according to simple parameters",
+  "repository": "https://github.com/matthieu-D/angular-lorem-image",
+  "devDependencies": {
+    "phantomjs" : "~1.9",
+    "karma" : "~0.10",
+    "karma-junit-reporter" : "~0.1",
+    "karma-jasmine" : "~0.1",
+    "karma-ng-scenario" : "~0.1"
+  }
+}

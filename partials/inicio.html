@@ -3,29 +3,22 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="{{i}}" ng-repeat="i in [1, 2, 3, 4, 5]"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x300&text=EMAC');"></div>
+            <div class="fill" style="background-image:url('https://loremflickr.com/1000/400/math?random=0');"></div>
             <div class="carousel-caption">
                 <h1>Ejemplo texto en carousel</h1>
             </div>
         </div>
-        <div class="item">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x300&text=TEC');"></div>
+        <div class="item" ng-repeat="i in [1, 2, 3, 4, 5]">
+            <div class="fill" style="background-image:url('https://loremflickr.com/1000/400/math?random={{i}}');"></div>
             <div class="carousel-caption">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
-            </div>
-        </div>
-        <div class="item">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x300&text=MATEMATICAS');"></div>
-            <div class="carousel-caption">
-                <h1>Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo</h1>
-            </div>
+                <h1>Ejemplo texto en carousel</h1>
+            </div>        
         </div>
     </div>
 
@@ -45,11 +38,11 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <h3><i class="fa fa-check-circle"></i> Bootstrap 3 Built</h3>
-                <p>The 'Modern Business' website template by <a href="http://startbootstrap.com">Start Bootstrap</a> is built with <a href="http://getbootstrap.com">Bootstrap 3</a>. Make sure you're up to date with latest Bootstrap documentation!</p>
+                <p>The 'Modern Business' website template by <a href="//startbootstrap.com">Start Bootstrap</a> is built with <a href="//getbootstrap.com">Bootstrap 3</a>. Make sure you're up to date with latest Bootstrap documentation!</p>
             </div>
             <div class="col-lg-4 col-md-4">
                 <h3><i class="fa fa-pencil"></i> Ready to Style &amp; Edit</h3>
-                <p>You're ready to go with this pre-built page structure, now all you need to do is add your own custom stylings! You can see some free themes over at <a href="http://bootswatch.com">Bootswatch</a>, or come up with your own using <a href="http://getbootstrap.com/customize/">the Bootstrap customizer</a>!</p>
+                <p>You're ready to go with this pre-built page structure, now all you need to do is add your own custom stylings! You can see some free themes over at <a href="//bootswatch.com">Bootswatch</a>, or come up with your own using <a href="//getbootstrap.com/customize/">the Bootstrap customizer</a>!</p>
             </div>
             <div class="col-lg-4 col-md-4">
                 <h3><i class="fa fa-folder-open"></i> Many Page Options</h3>
@@ -94,32 +87,32 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-inicio-portfolio" src="http://placehold.it/700x450">
+                    <img class="img-responsive img-inicio-portfolio" src="//placehold.it/700x450">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-inicio-portfolio" src="http://placehold.it/700x450">
+                    <img class="img-responsive img-inicio-portfolio" src="//placehold.it/700x450">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-inicio-portfolio" src="http://placehold.it/700x450">
+                    <img class="img-responsive img-inicio-portfolio" src="//placehold.it/700x450">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-inicio-portfolio" src="http://placehold.it/700x450">
+                    <img class="img-responsive img-inicio-portfolio" src="//placehold.it/700x450">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-inicio-portfolio" src="http://placehold.it/700x450">
+                    <img class="img-responsive img-inicio-portfolio" src="//placehold.it/700x450">
                 </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-inicio-portfolio" src="http://placehold.it/700x450">
+                    <img class="img-responsive img-inicio-portfolio" src="//placehold.it/700x450">
                 </a>
             </div>
         </div>
@@ -142,7 +135,7 @@
                     <li>Bootstrap 3 Framework</li>
                     <li>Mobile Responsive Design</li>
                     <li>Predefined File Paths</li>
-                    <li>Working PHP Contact Page</li>
+                    <li>Working PHP Contacto Page</li>
                     <li>Minimal Custom CSS Styles</li>
                     <li>Unstyled: Add Your Own Style and Content!</li>
                     <li>Font-Awesome fonts come pre-installed!</li>
@@ -151,7 +144,7 @@
                 </ul>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc">
+                <img class="img-responsive" src="//placehold.it/700x450/ffffff/cccccc">
             </div>
         </div>
         <!-- /.row -->
@@ -168,7 +161,7 @@
 
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <img class="img-responsive" src="http://placehold.it/700x450">
+                <img class="img-responsive" src="//placehold.it/700x450">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <h2>Modern Business Features Include:</h2>
@@ -176,7 +169,7 @@
                     <li>Bootstrap 3 Framework</li>
                     <li>Mobile Responsive Design</li>
                     <li>Predefined File Paths</li>
-                    <li>Working PHP Contact Page</li>
+                    <li>Working PHP Contacto Page</li>
                     <li>Minimal Custom CSS Styles</li>
                     <li>Unstyled: Add Your Own Style and Content!</li>
                     <li>Font-Awesome fonts come pre-installed!</li>
@@ -201,7 +194,7 @@
             <p>For more templates and more page options that you can integrate into this website template, visit Start Bootstrap!</p>
         </div>
         <div class="col-lg-4 col-md-4">
-            <a class="btn btn-lg btn-primary pull-right" href="http://startbootstrap.com">See More Templates!</a>
+            <a class="btn btn-lg btn-primary pull-right" href="//startbootstrap.com">See More Templates!</a>
         </div>
     </div>
     <!-- /.row -->

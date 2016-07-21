@@ -1,168 +1,80 @@
+<!-- Menu toggle for mobile version -->
 
+	<button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
+	<!-- Menu -->
+	<nav id="ml-menu" class="menu hidden-print">
+		<!-- Close button for mobile version -->
+		<button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
+		
+		<div class="menu__wrap" ng-controller="SidebarCtrl">
+			
+			<!-- menu de niveles -->
+			<ul data-menu="main" class="menu__level">
+				<li ng-repeat="nivel in niveles" class="menu__item">
+					<a class="menu__link fade" data-submenu="submenu-tema-{{nivel.idNivel}}" href="#niveles/{{nivel.idNivel}}" >
+						{{nivel.nombre}}
+					</a>
+				</li>
+			</ul>
 
+			<!-- Submenu de temas -->
+			<ul ng-repeat="nivel in niveles" data-menu="submenu-tema-{{nivel.idNivel}}" class="menu__level" on-finish-render="ngRepeatFinished">
+				<li ng-repeat="tema in nivel.temas" class="menu__item fade"><a class="menu__link" href="#niveles/{{nivel.idNivel}}/temas/{{tema.idTema}}">{{tema.nombre}}</a></li>
+			</ul>
+			
+		</div>
+	</nav>
 
-<!--  Números-->
-<!--  Geometría-->
-<!--  Relaciones y Álgebra-->
-<!-- Estadística y Probabilidad-->
-
-<!--Números-->
-<!--Geometría-->
-<!--Relaciones y Álgebra        -->
-<!--Estadística y Probabilidad-->
-
-<!--Geometría-->
-<!--Relaciones y Álgebra-->
-<!--Estadística y Probabilidad    -->
-
-<!--Geometría    -->
-<!--Relaciones y Álgebra-->
-<!--Estadística y Probabilidad-->
-<ul class="sidebar-nav hidden-print">
-    <li class="sidebar-brand">
-        <a href="#" class="text-center">
-            TEMAS
-        </a>
-    </li>
-    <li>
-        <nav class="hidden-print">
-            <div class="well">
+			<!--<ul class="panel panel-default">-->
                 
-                <h4>Blog Search</h4>
-        
-                <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></i>
-                        </button>
-                    </span>
-                </div>
-                <!-- /input-group -->
-            </div>
-            <!-- /well -->
-            <!--<div class="well">-->
-            <!--    <h4>Categorias Populares</h4>-->
-        
-            <!--    <div class="row">-->
-            <!--        <div class="col-lg-6">-->
-            <!--            <ul class="list-unstyled">-->
-            <!--                <li><a href="#dinosaurs">Números</a>-->
-            <!--                </li>-->
-            <!--                <li><a href="#spaceships">Geometría</a>-->
-            <!--                </li>-->
-            <!--            </ul>-->
-            <!--        </div>-->
-            <!--        <div class="col-lg-6">-->
-            <!--            <ul class="list-unstyled">-->
-            <!--                <li><a href="#alien-abductions">Álgebra</a>-->
-            <!--                </li>-->
-            <!--                <li><a href="#business-casual">Trigonometría</a>-->
-            <!--                </li>-->
-            <!--            </ul>-->
-            <!--        </div>-->
-            <!--    </div>-->
-            <!--</div>-->
-            <!-- /well -->
-        </nav>
-    </li>
-    <li>
+   <!--             <div class="panel-heading">-->
+   <!--                 <h4 class="panel-title">-->
+   <!--                     <a data-toggle="collapse" data-parent="#accordion" href="#niveles/octavo" data-target="#octavo">Octavo</a>-->
+   <!--                 </h4>-->
+   <!--             </div>-->
+    
+   <!--             <div id="octavo" class="panel-collapse collapse">-->
+   <!--                 <ul class="list-group">-->
+   <!--                     <li class="list-group-item"><a href="#">Números</a></li>-->
+   <!--                     <li class="list-group-item"><a href="#">Geometría</a></li>-->
+   <!--                     <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>-->
+   <!--                     <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>-->
+   <!--                 </ul>-->
+   <!--             </div>-->
+    
+   <!--         </ul>-->
+    
+   <!--         <ul class="panel panel-default">-->
+    
+   <!--             <div class="panel-heading">-->
+   <!--                 <h4 class="panel-title">-->
+   <!--                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Noveno</a>-->
+   <!--                 </h4>-->
+   <!--             </div>-->
+    
+   <!--             <div id="collapseThree" class="panel-collapse collapse">-->
+   <!--                 <ul class="list-group">-->
+   <!--                     <li class="list-group-item"><a href="#">Números</a></li>-->
+   <!--                     <li class="list-group-item"><a href="#">Geometría</a></li>-->
+   <!--                     <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>-->
+   <!--                     <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>-->
+   <!--                 </ul>-->
+   <!--             </div>-->
+    
+   <!--         </ul>-->
+	
+	
+<script>
+	jQuery(document).ready(function($){
 
-        <div id="accordion" class="panel-group">
-    
-            <div class="panel panel-default">
-    
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#niveles/setimo" data-target="#setimo">Sétimo</a>
-                    </h4>
-                </div>
-    
-                <div id="setimo" class="panel-collapse collapse">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="#setimo/numeros">Números</a></li>
-                        <li class="list-group-item"><a href="#">Geometría</a></li>
-                        <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>
-                        <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>
-                    </ul>
-                </div>
-    
-            </div>
-    
-            <div class="panel panel-default">
-                
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#niveles/octavo" data-target="#octavo">Octavo</a>
-                    </h4>
-                </div>
-    
-                <div id="octavo" class="panel-collapse collapse">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="#">Números</a></li>
-                        <li class="list-group-item"><a href="#">Geometría</a></li>
-                        <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>
-                        <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>
-                    </ul>
-                </div>
-    
-            </div>
-    
-            <div class="panel panel-default">
-    
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Noveno</a>
-                    </h4>
-                </div>
-    
-                <div id="collapseThree" class="panel-collapse collapse">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="#">Números</a></li>
-                        <li class="list-group-item"><a href="#">Geometría</a></li>
-                        <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>
-                        <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>
-                    </ul>
-                </div>
-    
-            </div>
-    
-            <div class="panel panel-default">
-    
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Décimo</a>
-                    </h4>
-                </div>
-    
-                <div id="collapseThree" class="panel-collapse collapse">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="#">Geometría</a></li>
-                        <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>
-                        <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>
-                    </ul>
-                </div>
-    
-            </div>
-    
-            <div class="panel panel-default">
-    
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Undécimo</a>
-                    </h4>
-                </div>
-    
-                <div id="collapseThree" class="panel-collapse collapse">
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="#">Geometría</a></li>
-                        <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>
-                        <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>
-                    </ul>
-                </div>
-    
-            </div>
-    
-        </div>
+		// mobile menu toggle
+		$('.action--open').click(function(){
+			$(this).addClass("menu--open");
+		});
+		
+		$('.action--close').click(function(){
+			$(this).removeClass('menu--open');
+		});
 
-    </li>
-</ul>
+	});
+</script> 
