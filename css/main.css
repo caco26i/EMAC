@@ -9,12 +9,7 @@ For more info and more free Bootstrap 3 HTML themes, visit //startbootstrap.com!
 /* Global Styles */
 
 html, body {
-    height: 100%;
-}
-
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    min-height: 100%;
 }
 
 a{
@@ -30,6 +25,7 @@ a{
     padding: 0 20px;
     box-shadow: 0 0 6px #002855;
     z-index: 99991;
+	height: 60px;
 }
 
 #main-header .user_logged{
@@ -45,7 +41,6 @@ a{
 
 #page-conten-wrapper {
     background: url(../img/grid-bg.jpg);
-    padding: 0 25px;
     position: relative;
 }
 

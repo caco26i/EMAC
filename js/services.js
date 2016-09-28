@@ -113,7 +113,6 @@ function ($http)  {
                     },
                 ]
             },
-        
             1: {
                 idNivel: 1,
                 nombre: "Octavo",
@@ -195,32 +194,6 @@ function ($http)  {
             4: {
               idNivel: 4,
                   nombre: "Undecimo",
-                temas : [
-                    {
-                        idTema: 0,
-                        nombre: "Números"
-                    },
-                    {
-                        idTema: 1,
-                        nombre: "Geometría"
-                    },
-                    {
-                        idTema: 2,
-                        nombre: "Álgebra"
-                    },
-                    {
-                        idTema: 3,
-                        nombre: "Estadística"
-                    },
-                    {
-                        idTema: 4,
-                        nombre: "Probabilidad"
-                    },
-                ]
-            },
-            5: {
-              idNivel: 5,
-                  nombre: "Sétimo",
                 temas : [
                     {
                         idTema: 0,
