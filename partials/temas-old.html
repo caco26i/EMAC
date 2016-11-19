@@ -1,14 +1,14 @@
 <div class="row">
 
     <div class="col-lg-12">
-        <h1 class="page-header">{{niveles[nivel_actual.idNivel].nombre}}
-            <small>Lista De Temas De {{niveles[nivel_actual.idNivel].nombre}}</small>
+        <h1 class="page-header">{{niveles[nivel_actual.level_id].name}}
+            <small>Lista De Temas De {{niveles[nivel_actual.level_id].name}}</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="../index.html">Inicio</a>
             </li>
             <li><a href="#niveles">Niveles</a></li>
-            <li class="active">{{niveles[nivel_actual.idNivel].nombre}}</li>
+            <li class="active">{{niveles[nivel_actual.level_id].name}}</li>
         </ol>
     </div>
 
@@ -45,9 +45,9 @@
                 <h2 class="text-capitalize">Temas</h2>
                 <hr>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6" ng-repeat="tema in niveles[nivel_actual.idNivel].temas">
-                <a href="#niveles/{{nivel.idNivel}}/temas/{{tema.idTema}}">
-                    <img class="img-responsive img-inicio-portfolio" src="https://loremflickr.com/700/450/{{tema.nombre}}?random={{$index}}">
+            <div class="col-lg-4 col-md-4 col-sm-6" ng-repeat="tema in niveles[nivel_actual.level_id].topics">
+                <a href="#niveles/{{nivel.level_id}}/temas/{{tema.level_id}}">
+                    <img class="img-responsive img-inicio-portfolio" src="https://loremflickr.com/700/450/{{tema.name}}?random={{$index}}">
                 </a>
             </div>
         </div>

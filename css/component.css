@@ -76,7 +76,7 @@
 	width: 100%;
 }
 
-.menu__link {
+.menu__link, .menu__link:focus {
 	font-weight: 600;
 	position: relative;
 	display: block;
@@ -241,10 +241,20 @@
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	color: #002855;
+	
+    transition: 1s linear all;
+    -webkit-transition: 1s linear all;
+
+	display: none;
+}
+
+.menu__breadcrumbs a:nth-last-child(2) {
+	display: block;
 }
 
 .menu__breadcrumbs a:last-child {
 	pointer-events: none;
+	display: block;
 }
 
 .menu__breadcrumbs a:hover {

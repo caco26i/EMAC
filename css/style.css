@@ -18,7 +18,7 @@ body {
 	z-index: 2;
 	height: 50px;
 /*	background: #546e7a; color original*/
-	background: rgba(0, 40, 85, 0.75);
+	background: #a9a9a9;
 	color: #fafafa;
 	font-weight: 200;
 	font-size: 15px;
@@ -108,12 +108,11 @@ body {
 
 .dashboard__sidebar {
 	position: fixed;
-	top: 60;
+	top: 60px;
 	bottom: 0;
 	left: 0;
 	z-index: 6;
 	width: 250px;
-	background: #455a64;
 	transition: all 150ms ease-in-out;
 	-webkit-transform: translate(-250px, 0);
 	transform: translate(-250px, 0);

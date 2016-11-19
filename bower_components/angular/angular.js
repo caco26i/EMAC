@@ -8860,7 +8860,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
       }
 
       if (previousDirective) {
-        throw $compileMinErr('multidir', 'Multiple directives [{0}{1}, {2}{3}] asking for {4} on: {5}',
+        throw $compileMinErr('multidir', 'Multiple directives : [{0}{1}, {2}{3}] asking for {4} on: {5}',
             previousDirective.name, wrapModuleNameIfDefined(previousDirective.$$moduleName),
             directive.name, wrapModuleNameIfDefined(directive.$$moduleName), what, startingTag(element));
       }
@@ -13018,7 +13018,7 @@ Lexer.prototype = {
     var colStr = (isDefined(start)
             ? 's ' + start +  '-' + this.index + ' [' + this.text.substring(start, end) + ']'
             : ' ' + end);
-    throw $parseMinErr('lexerr', 'Lexer Error: {0} at column{1} in expression [{2}].',
+    throw $parseMinErr('lexerr', 'Lexer Error: {0} at column{1} in expression : [{2}].',
         error, colStr, this.text);
   },
 
@@ -13376,7 +13376,7 @@ AST.prototype = {
 
   throwError: function(msg, token) {
     throw $parseMinErr('syntax',
-        'Syntax Error: Token \'{0}\' {1} at column {2} of the expression [{3}] starting at [{4}].',
+        'Syntax Error: Token \'{0}\' {1} at column {2} of the expression : [{3}] starting at : [{4}].',
           token.text, msg, (token.index + 1), this.text, this.text.substring(token.index));
   },
 
@@ -18720,7 +18720,7 @@ function $FilterProvider($provide) {
  * @example
    <example>
      <file name="index.html">
-       <div ng-init="friends = [{name:'John', phone:'555-1276'},
+       <div ng-init="friends = : [{name:'John', phone:'555-1276'},
                                 {name:'Mary', phone:'800-BIG-MARY'},
                                 {name:'Mike', phone:'555-4321'},
                                 {name:'Adam', phone:'555-5678'},
@@ -19783,7 +19783,7 @@ function limitToFilter() {
        angular.module('orderByExample', [])
          .controller('ExampleController', ['$scope', function($scope) {
            $scope.friends =
-               [{name:'John', phone:'555-1212', age:10},
+               : [{name:'John', phone:'555-1212', age:10},
                 {name:'Mary', phone:'555-9876', age:19},
                 {name:'Mike', phone:'555-4321', age:21},
                 {name:'Adam', phone:'555-5678', age:35},
@@ -19828,7 +19828,7 @@ function limitToFilter() {
        angular.module('orderByExample', [])
          .controller('ExampleController', ['$scope', function($scope) {
            $scope.friends =
-               [{name:'John', phone:'555-1212', age:10},
+               : [{name:'John', phone:'555-1212', age:10},
                 {name:'Mary', phone:'555-9876', age:19},
                 {name:'Mike', phone:'555-4321', age:21},
                 {name:'Adam', phone:'555-5678', age:35},
@@ -26649,7 +26649,7 @@ var ngOptionsMinErr = minErr('ngOptions');
  * Given this array of items on the $scope:
  *
  * ```js
- * $scope.items = [{
+ * $scope.items = : [{
  *   id: 1,
  *   label: 'aLabel',
  *   subItem: { name: 'aSubItem' }
@@ -27827,7 +27827,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', '$log', function($locale,
         <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
         <ul class="example-animate-container">
           <li class="animate-repeat" ng-repeat="friend in friends | filter:q as results">
-            [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+            : [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
           </li>
           <li class="animate-repeat" ng-if="results.length == 0">
             <strong>No results found...</strong>

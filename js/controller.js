@@ -7,10 +7,75 @@ angular.module('EMACWebApp.controllers', [])
 	console.log("Blog Controller reporting for duty.");
 })
 
+.controller('SidebarCtrl', function($scope, $location, variablesGlobales, service) {
+	console.log("SidebarCtrl Controller reporting for duty.");
+	service.get("tree", "", $scope).then(function(response){
+		$scope.niveles = response
+	})//temasXnivel.all();
+	$scope.nivel_actual = {
+		level_id: variablesGlobales.level_id,
+	}
+	
+//	//Observador
+//	$scope.$on('level_idChanged', function () {
+//        $scope.nivel_actual.level_id = variablesGlobales.level_id;
+//    });
+
+	$scope.$on('ngRepeatFinished', 
+		function(ngRepeatFinishedEvent) {
+			// var MLMenu = $("#ml-menu").MLMenu({
+			// 	breadcrumbsCtrl : true, // show breadcrumbs
+			// 	backCtrl : true, // show back button
+			// 	itemsDelayInterval : 60, // delay between each menu item sliding animation
+			// 	//onItemClick: function(){}, // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+			// 	initialBreadcrumb: "Niveles"
+			// });
+			var menuEl = document.getElementById('ml-menu'),
+			mlmenu = new MLMenu(menuEl, {
+				// breadcrumbsCtrl : true, // show breadcrumbs
+				initialBreadcrumb : 'INICIO', // initial breadcrumb text
+				backCtrl : true, // show back button
+				// itemsDelayInterval : 60, // delay between each menu item sliding animation
+				// onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+			});
+		}
+	);
+})
+
+.controller('NivelesCtrl', function($scope, $location, $http, $routeParams, variablesGlobales) {
+	console.log("NIVELES Controller reporting for duty.");
+	console.log("$routeParams")
+	console.log($routeParams)
+	console.log("variablesGlobales")
+	
+//	variablesGlobales.setIdNivel($routeParams.level_id);
+//	
+//	$scope.nivel_actual = {
+//		level_id: variablesGlobales.level_id,
+//	}
+//	$scope.nivel = {
+//		level_id: variablesGlobales.level_id,
+//	}
+	console.log($scope.nivel_actual)
+})
+
+.controller('TemasCtrl', function($scope, $location, $http, $routeParams, variablesGlobales, service) {
+	console.log("TemasCtrl reporting for duty.");
+	console.log($routeParams)
+	service.get("material/topic/"+$routeParams.topic_id+"/0/10", "", $scope).then(function(response){
+		$scope.materiales = response.materials
+	})
+	
+	$scope.$on('ngRepeatFinished', 
+		function(ngRepeatFinishedEvent) {
+			new Temas();
+		}
+	);
+})
 
 .controller('CalendarioCtrl', function( $scope, $compile, uiCalendarConfig/*, $location, $http */ ) {
 	console.log("Calendario Controller reporting for duty.");
-	  var date = new Date();
+	var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
@@ -19,11 +84,11 @@ angular.module('EMACWebApp.controllers', [])
     /* event source that pulls from google.com */
     $scope.eventSource = {
 
-			googleCalendarApiKey: 'AIzaSyB8PR2AcXfj6pqODsYkw7hFGyYqM4QvSSc',
+		googleCalendarApiKey: 'AIzaSyB8PR2AcXfj6pqODsYkw7hFGyYqM4QvSSc',
 
-			googleCalendarId: "ceredem.itcr@gmail.com",
+		googleCalendarId: "ceredem.itcr@gmail.com",
 //            url: "ceredem.itcr@gmail.com",
-            className: 'gcal-event',           // an option!
+		className: 'gcal-event',           // an option!
 //            currentTimezone: 'America/Chicago' // an option!
     };
     /* event source that contains custom events on the scope */
@@ -140,67 +205,14 @@ angular.module('EMACWebApp.controllers', [])
     $scope.eventSources2 = [$scope.calEventsExt, $scope.eventsF, $scope.events];
 })
 
-.controller('SidebarCtrl', function($scope, $location, temasXnivel, variablesGlobales) {
-	console.log("SidebarCtrl Controller reporting for duty.");
-	$scope.niveles = temasXnivel.all();
-	$scope.nivel_actual = {
-		idNivel: variablesGlobales.idNivel,
-	}
-	
-	//Observador
-	$scope.$on('idNivelChanged', function () {
-        $scope.nivel_actual.idNivel = variablesGlobales.idNivel;
-    });
-
-	$scope.$on('ngRepeatFinished', 
-		function(ngRepeatFinishedEvent) {
-			// var MLMenu = $("#ml-menu").MLMenu({
-			// 	breadcrumbsCtrl : true, // show breadcrumbs
-			// 	backCtrl : true, // show back button
-			// 	itemsDelayInterval : 60, // delay between each menu item sliding animation
-			// 	//onItemClick: function(){}, // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
-			// 	initialBreadcrumb: "Niveles"
-			// });
-			var menuEl = document.getElementById('ml-menu'),
-			mlmenu = new MLMenu(menuEl, {
-				// breadcrumbsCtrl : true, // show breadcrumbs
-				initialBreadcrumb : 'NIVELES', // initial breadcrumb text
-				backCtrl : true, // show back button
-				// itemsDelayInterval : 60, // delay between each menu item sliding animation
-				// onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
-			});
-		}
-	);
-})
-
-.controller('NivelesCtrl', function($scope, $location, $http, $routeParams, temasXnivel, variablesGlobales) {
-	console.log("NIVELES Controller reporting for duty.");
-	$scope.niveles = temasXnivel.all();
-	console.log("$routeParams")
-	console.log($routeParams)
-	console.log("variablesGlobales")
-	
-	variablesGlobales.setIdNivel($routeParams.idNivel);
-	variablesGlobales.setIdNivel($routeParams.idNivel);
-	
-	$scope.nivel_actual = {
-		idNivel: variablesGlobales.idNivel,
-	}
-	$scope.nivel = {
-		idNivel: variablesGlobales.idNivel,
-	}
-	console.log($scope.nivel_actual)
-})
-/**
+/*************************************
  * Controls all other Pages
- */
-.controller('PageCtrl', ['$scope', '$location', '$http', 'service', 'temasXnivel',
-function($scope, $location, $http, service, temasXnivel) {
+ ***********************************/
+.controller('PageCtrl', ['$scope', '$location', '$http', 'service', 
+function($scope, $location, $http, service) {
 	console.log("Page Controller reporting for duty.");
 
 	// $scope.niveles = temasXnivel.all();
-	
-	// Activates the Carousel
 	$('.carousel').carousel({
 		interval: 5000
 	});
@@ -211,6 +223,7 @@ function($scope, $location, $http, service, temasXnivel) {
 	});
 }
 ])
+
 .controller('generalCtrl', ['$scope', '$location', '$http', '$rootScope', 'cfpLoadingBar',
 function($scope, $location, $http, $rootScope, cfpLoadingBar) {
 	console.log("generalCtrl Controller reporting for duty.");
@@ -235,6 +248,7 @@ function($scope, $location, $http, $rootScope, cfpLoadingBar) {
 //	})
 }
 ])
+
 .controller('LoginCtrl', ['$scope', '$facebook',
 	function($scope, $facebook) {
 		console.log("LoginCtrl Controller reporting for duty.");

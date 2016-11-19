@@ -15,7 +15,7 @@ function ($http)  {
 
         $('.btn').button('loading');
         return $http({
-            url: 'http://localhost:8080/service/multiDBService.svc/' + rute,
+            url: 'http://localhost:9000/' + rute,
             method: method,
             headers: { 'Content-Type': 'application/json' },
             data: JSON.stringify(params)
@@ -88,131 +88,131 @@ function ($http)  {
       all: function(){
           return {
             0: {
-                idNivel: 0,
+                level_id: 0,
                 nombre: "Sétimo",
                 temas : [
                     {
-                        idTema: 0,
+                        level_id: 0,
                         nombre: "Números"
                     },
                     {
-                        idTema: 1,
+                        level_id: 1,
                         nombre: "Geometría"
                     },
                     {
-                        idTema: 2,
+                        level_id: 2,
                         nombre: "Álgebra"
                     },
                     {
-                        idTema: 3,
+                        level_id: 3,
                         nombre: "Estadística"
                     },
                     {
-                        idTema: 4,
+                        level_id: 4,
                         nombre: "Probabilidad"
                     },
                 ]
             },
             1: {
-                idNivel: 1,
+                level_id: 1,
                 nombre: "Octavo",
                 temas : [
                     {
-                        idTema: 0,
+                        level_id: 0,
                         nombre: "Números"
                     },
                     {
-                        idTema: 1,
+                        level_id: 1,
                         nombre: "Geometría"
                     },
                     {
-                        idTema: 2,
+                        level_id: 2,
                         nombre: "Álgebra"
                     },
                     {
-                        idTema: 3,
+                        level_id: 3,
                         nombre: "Estadística"
                     },
                     {
-                        idTema: 4,
+                        level_id: 4,
                         nombre: "Probabilidad"
                     },
                 ]
             },
             2: {
-              idNivel: 2,
+              level_id: 2,
                   nombre: "Noveno",
                 temas : [
                     {
-                        idTema: 0,
+                        level_id: 0,
                         nombre: "Números"
                     },
                     {
-                        idTema: 1,
+                        level_id: 1,
                         nombre: "Geometría"
                     },
                     {
-                        idTema: 2,
+                        level_id: 2,
                         nombre: "Álgebra"
                     },
                     {
-                        idTema: 3,
+                        level_id: 3,
                         nombre: "Estadística"
                     },
                     {
-                        idTema: 4,
+                        level_id: 4,
                         nombre: "Probabilidad"
                     },
                 ]
             },
             3: {
-              idNivel: 3,
+              level_id: 3,
                   nombre: "Decimo",
                 temas : [
                     {
-                        idTema: 0,
+                        level_id: 0,
                         nombre: "Números"
                     },
                     {
-                        idTema: 1,
+                        level_id: 1,
                         nombre: "Geometría"
                     },
                     {
-                        idTema: 2,
+                        level_id: 2,
                         nombre: "Álgebra"
                     },
                     {
-                        idTema: 3,
+                        level_id: 3,
                         nombre: "Estadística"
                     },
                     {
-                        idTema: 4,
+                        level_id: 4,
                         nombre: "Probabilidad"
                     },
                 ]
             },
             4: {
-              idNivel: 4,
+              level_id: 4,
                   nombre: "Undecimo",
                 temas : [
                     {
-                        idTema: 0,
+                        level_id: 0,
                         nombre: "Números"
                     },
                     {
-                        idTema: 1,
+                        level_id: 1,
                         nombre: "Geometría"
                     },
                     {
-                        idTema: 2,
+                        level_id: 2,
                         nombre: "Álgebra"
                     },
                     {
-                        idTema: 3,
+                        level_id: 3,
                         nombre: "Estadística"
                     },
                     {
-                        idTema: 4,
+                        level_id: 4,
                         nombre: "Probabilidad"
                     },
                 ]
@@ -226,21 +226,21 @@ function ($http)  {
 })
 .factory('variablesGlobales', function ($rootScope) {
     var mySharedService = {
-        idTema: -1,
-        idNivel: -1,
+        level_id: -1,
+        level_id: -1,
     };
 
     mySharedService.values = {};
-
-    mySharedService.setIdTema = function(value){
-        mySharedService.idTema = value;
-        $rootScope.$broadcast('idTemaChanged');
-    }
-    
-    mySharedService.setIdNivel = function(value){
-        mySharedService.idNivel = value;
-        $rootScope.$broadcast('idNivelChanged');
-    }
+//
+//    mySharedService.setIdTema = function(value){
+//        mySharedService.level_id = value;
+//        $rootScope.$broadcast('level_idChanged');
+//    }
+//    
+//    mySharedService.setIdNivel = function(value){
+//        mySharedService.level_id = value;
+//        $rootScope.$broadcast('level_idChanged');
+//    }
 
     return mySharedService; 
 })

@@ -1,80 +1,60 @@
 <!-- Menu toggle for mobile version -->
 
-	<button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
-	<!-- Menu -->
-	<nav id="ml-menu" class="menu hidden-print">
-		<!-- Close button for mobile version -->
-		<button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
-		
-		<div class="menu__wrap" ng-controller="SidebarCtrl">
-			
-			<!-- menu de niveles -->
-			<ul data-menu="main" class="menu__level">
-				<li ng-repeat="nivel in niveles" class="menu__item">
-					<a class="menu__link fade" data-submenu="submenu-tema-{{nivel.idNivel}}" href="#niveles/{{nivel.idNivel}}" >
-						{{nivel.nombre}}
-					</a>
-				</li>
-			</ul>
+<!-- Menu -->
+<nav id="ml-menu" class="menu hidden-print">
+	<div class="menu__wrap" ng-controller="SidebarCtrl">
 
-			<!-- Submenu de temas -->
-			<ul ng-repeat="nivel in niveles" data-menu="submenu-tema-{{nivel.idNivel}}" class="menu__level" on-finish-render="ngRepeatFinished">
-				<li ng-repeat="tema in nivel.temas" class="menu__item fade"><a class="menu__link" href="#niveles/{{nivel.idNivel}}/temas/{{tema.idTema}}">{{tema.nombre}}</a></li>
-			</ul>
-			
-		</div>
-	</nav>
+		<!-- menu de niveles -->
+		<ul data-menu="main" class="menu__level">
+			<li class="menu__item">
+				<a class="menu__link fade" data-submenu="submenu-recursos">
+					Recursos Didacticos
+				</a>
+			</li>
+			<li class="menu__item">
+				<a class="menu__link fade" data-submenu="submenu-geogebra">
+					Geogebra
+				</a>
+			</li>
+		</ul>
 
-			<!--<ul class="panel panel-default">-->
-                
-   <!--             <div class="panel-heading">-->
-   <!--                 <h4 class="panel-title">-->
-   <!--                     <a data-toggle="collapse" data-parent="#accordion" href="#niveles/octavo" data-target="#octavo">Octavo</a>-->
-   <!--                 </h4>-->
-   <!--             </div>-->
-    
-   <!--             <div id="octavo" class="panel-collapse collapse">-->
-   <!--                 <ul class="list-group">-->
-   <!--                     <li class="list-group-item"><a href="#">Números</a></li>-->
-   <!--                     <li class="list-group-item"><a href="#">Geometría</a></li>-->
-   <!--                     <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>-->
-   <!--                     <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>-->
-   <!--                 </ul>-->
-   <!--             </div>-->
-    
-   <!--         </ul>-->
-    
-   <!--         <ul class="panel panel-default">-->
-    
-   <!--             <div class="panel-heading">-->
-   <!--                 <h4 class="panel-title">-->
-   <!--                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Noveno</a>-->
-   <!--                 </h4>-->
-   <!--             </div>-->
-    
-   <!--             <div id="collapseThree" class="panel-collapse collapse">-->
-   <!--                 <ul class="list-group">-->
-   <!--                     <li class="list-group-item"><a href="#">Números</a></li>-->
-   <!--                     <li class="list-group-item"><a href="#">Geometría</a></li>-->
-   <!--                     <li class="list-group-item"><a href="#">Relaciones y Álgebra</a></li>-->
-   <!--                     <li class="list-group-item"><a href="#">Estadística y Probabilidad</a></li>-->
-   <!--                 </ul>-->
-   <!--             </div>-->
-    
-   <!--         </ul>-->
-	
-	
+		<ul data-menu="submenu-recursos" class="menu__level">
+			<li ng-repeat="nivel in niveles" class="menu__item">
+				<a class="menu__link fade" data-submenu="submenu-tema-{{nivel.level_id}}">
+					{{nivel.name}}
+				</a>
+			</li>
+		</ul>
+
+		<ul data-menu="submenu-geogebra" class="menu__level">
+			<li ng-repeat="nivel in niveles" class="menu__item">
+				<a class="menu__link fade" data-submenu="submenu-tema-{{nivel.level_id}}" href="#niveles/{{nivel.level_id}}">
+					{{nivel.name}}
+				</a>
+			</li>
+		</ul>
+
+		<!-- Submenu de recursos -->
+
+		<ul ng-repeat="nivel in niveles" data-menu="submenu-tema-{{nivel.level_id}}" class="menu__level" on-finish-render="ngRepeatFinished">
+			<li ng-repeat="tema in nivel.topics" class="menu__item fade"><a class="menu__link" href="#niveles/{{nivel.level_id}}/temas/{{tema.topic_id}}">{{tema.name}}</a></li>
+		</ul>
+
+	</div>
+</nav>
+
 <script>
-	jQuery(document).ready(function($){
+	jQuery(document).ready(function($) {
 
 		// mobile menu toggle
-		$('.action--open').click(function(){
+		$('.action--open').click(function() {
 			$(this).addClass("menu--open");
 		});
-		
-		$('.action--close').click(function(){
+
+		$('.action--close').click(function() {
 			$(this).removeClass('menu--open');
 		});
 
 	});
-</script> 
+
+</script>

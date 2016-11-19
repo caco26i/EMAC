@@ -38,16 +38,16 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 		})
 		//niveles
 		.when("/niveles", {
-			templateUrl: "partials/niveles.html",
-			controller: "NivelesCtrl"
+			templateUrl: "partials/inicio.html",
+			controller: "PageCtrl"
 		})
-		.when("/niveles/:idNivel", {
-			templateUrl: "partials/niveles.html",
-			controller: "NivelesCtrl"
+		.when("/niveles/:level_id", {
+			templateUrl: "partials/inicio.html",
+			controller: "PageCtrl"
 		})
-		.when("/niveles/:idNivel/temas/:idTema?", {
+		.when("/niveles/:level_id/temas/:topic_id", {
 			templateUrl: "partials/temas.html",
-			controller: "NivelesCtrl"
+			controller: "TemasCtrl"
 		})
 		// Pages
 		.when("/calendario", {
@@ -73,10 +73,6 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 		.when("/contact", {
 			templateUrl: "partials/contact.html",
 			controller: "PageCtrl"
-		})
-		.when("/temas", {
-			templateUrl: "partials/temas.html",
-			controller: "NivelesCtrl"
 		})
 		.when("/registro", {
 			templateUrl: "partials/registro.html",

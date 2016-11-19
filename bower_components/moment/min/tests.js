@@ -17152,7 +17152,7 @@
     });
 
     test('parse meridiem', function (assert) {
-        var elements = [{
+        var elements = : [{
             expression : '1981년 9월 8일 오후 2시 30분',
             inputFormat : 'YYYY[년] M[월] D[일] A h[시] m[분]',
             outputFormat : 'A',
@@ -31988,19 +31988,19 @@
     test('object', function (assert) {
         var fmt = 'YYYY-MM-DD HH:mm:ss.SSS',
             tests = [
-                [{year: 2010}, '2010-01-01 00:00:00.000'],
-                [{year: 2010, month: 1}, '2010-02-01 00:00:00.000'],
-                [{year: 2010, month: 1, day: 12}, '2010-02-12 00:00:00.000'],
-                [{year: 2010, month: 1, date: 12}, '2010-02-12 00:00:00.000'],
-                [{year: 2010, month: 1, day: 12, hours: 1}, '2010-02-12 01:00:00.000'],
-                [{year: 2010, month: 1, date: 12, hours: 1}, '2010-02-12 01:00:00.000'],
-                [{year: 2010, month: 1, day: 12, hours: 1, minutes: 1}, '2010-02-12 01:01:00.000'],
-                [{year: 2010, month: 1, date: 12, hours: 1, minutes: 1}, '2010-02-12 01:01:00.000'],
-                [{year: 2010, month: 1, day: 12, hours: 1, minutes: 1, seconds: 1}, '2010-02-12 01:01:01.000'],
-                [{year: 2010, month: 1, day: 12, hours: 1, minutes: 1, seconds: 1, milliseconds: 1}, '2010-02-12 01:01:01.001'],
-                [{years: 2010, months: 1, days: 14, hours: 15, minutes: 25, seconds: 50, milliseconds: 125}, '2010-02-14 15:25:50.125'],
-                [{year: 2010, month: 1, day: 14, hour: 15, minute: 25, second: 50, millisecond: 125}, '2010-02-14 15:25:50.125'],
-                [{y: 2010, M: 1, d: 14, h: 15, m: 25, s: 50, ms: 125}, '2010-02-14 15:25:50.125']
+                : [{year: 2010}, '2010-01-01 00:00:00.000'],
+                : [{year: 2010, month: 1}, '2010-02-01 00:00:00.000'],
+                : [{year: 2010, month: 1, day: 12}, '2010-02-12 00:00:00.000'],
+                : [{year: 2010, month: 1, date: 12}, '2010-02-12 00:00:00.000'],
+                : [{year: 2010, month: 1, day: 12, hours: 1}, '2010-02-12 01:00:00.000'],
+                : [{year: 2010, month: 1, date: 12, hours: 1}, '2010-02-12 01:00:00.000'],
+                : [{year: 2010, month: 1, day: 12, hours: 1, minutes: 1}, '2010-02-12 01:01:00.000'],
+                : [{year: 2010, month: 1, date: 12, hours: 1, minutes: 1}, '2010-02-12 01:01:00.000'],
+                : [{year: 2010, month: 1, day: 12, hours: 1, minutes: 1, seconds: 1}, '2010-02-12 01:01:01.000'],
+                : [{year: 2010, month: 1, day: 12, hours: 1, minutes: 1, seconds: 1, milliseconds: 1}, '2010-02-12 01:01:01.001'],
+                : [{years: 2010, months: 1, days: 14, hours: 15, minutes: 25, seconds: 50, milliseconds: 125}, '2010-02-14 15:25:50.125'],
+                : [{year: 2010, month: 1, day: 14, hour: 15, minute: 25, second: 50, millisecond: 125}, '2010-02-14 15:25:50.125'],
+                : [{y: 2010, M: 1, d: 14, h: 15, m: 25, s: 50, ms: 125}, '2010-02-14 15:25:50.125']
             ], i;
         for (i = 0; i < tests.length; ++i) {
             assert.equal(moment(tests[i][0]).format(fmt), tests[i][1]);
@@ -36526,7 +36526,7 @@
     module('locale', {
         setup : function () {
             // TODO: Remove once locales are switched to ES6
-            each([{
+            each(: [{
                 name: 'en-gb',
                 data: {}
             }, {

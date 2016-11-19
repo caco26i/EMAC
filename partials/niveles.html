@@ -1,5 +1,4 @@
 <div class="row">
-
     <div class="col-lg-12">
         <h1 class="page-header">NIVELES
             <small>lista de niveles</small>
@@ -10,7 +9,6 @@
             <li class="active">Niveles</li>
         </ol>
     </div>
-
 </div>
 
 <!-- Team Member Profiles -->
@@ -20,8 +18,8 @@
 
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6" ng-repeat="nivel in niveles">
-                <a href="#niveles/{{nivel.idNivel}}/temas">
-                    <img class="img-responsive img-inicio-portfolio" src="https://loremflickr.com/700/450/{{nivel.nombre}}" alt="{{nivel.nombre}}">
+                <a href="#niveles/{{nivel.level_id}}/temas">
+                    <img class="img-responsive img-inicio-portfolio" src="https://loremflickr.com/700/450/{{nivel.name}}" alt="{{nivel.name}}">
                 </a>
             </div>
         </div>

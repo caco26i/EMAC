@@ -35,8 +35,8 @@ a{
 #main-header .user_logged img{
     position: absolute;
     left: -50px;
-    top: 0;
-    box-shadow: 0 0 10px 0 #fff;
+    top: 1px;
+	box-shadow: 0 0 10px 0 #fff;
 }
 
 #page-conten-wrapper {

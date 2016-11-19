@@ -40,14 +40,14 @@ export default moment.defineLocale('el', {
     calendarEl : {
         sameDay : '[Σήμερα {}] LT',
         nextDay : '[Αύριο {}] LT',
-        nextWeek : 'dddd [{}] LT',
+        nextWeek : 'dddd : [{}] LT',
         lastDay : '[Χθες {}] LT',
         lastWeek : function () {
             switch (this.day()) {
                 case 6:
-                    return '[το προηγούμενο] dddd [{}] LT';
+                    return '[το προηγούμενο] dddd : [{}] LT';
                 default:
-                    return '[την προηγούμενη] dddd [{}] LT';
+                    return '[την προηγούμενη] dddd : [{}] LT';
             }
         },
         sameElse : 'L'
